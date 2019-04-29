@@ -1,0 +1,5 @@
+tmp/logs/
+tmp/sessions/
+node_modules/
+.env
+.DS_Store
