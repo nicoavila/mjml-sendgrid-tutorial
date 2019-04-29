@@ -5,7 +5,7 @@
 1. Clone the repository
 2. Run `npm install`
 3. Add your **Sendgrid API Key** in `.env` file
-3. Add you **Recipent Email** `.env` file
+3. Add your **Recipent Email** `.env` file
 4. Run `node example.js`
 
 ## How it works
