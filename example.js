@@ -1,21 +1,22 @@
-const dotenv = require('dotenv').config();
 const mjml = require('mjml');
 const sendgrid = require('@sendgrid/mail');
 const handlebars = require('handlebars');
 const chalk = require('chalk');
 const fs = require('fs');
+require('dotenv').config();
 
 //Configuración de Sendgrid
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 //Información utilizada como "variables" en el correo
 const userInfo = {
-    name: 'Nicolas',
+    name: 'Pepe',
     lastname: 'Avila',
     email: process.env.RECIPENT_EMAIL,
     patients: [
         { id: 24654, name: 'Matias Erazo' },
         { id: 24655, name: 'Rodrigo Gutierrez' },
+        { id: 25655, name: 'Maria Paz Bustos' },
     ]
 }
 
@@ -24,6 +25,7 @@ console.log(chalk.green('Leyendo información de template example.js'));
 const mjmlTemplateFile = fs.readFileSync(`${__dirname}/views/example.hbs`, 'utf8');
 const template = handlebars.compile(mjmlTemplateFile);
 const hbsHtml = template(userInfo);
+
 const templateMarkup = mjml(hbsHtml);
 if ( templateMarkup.errors.length == 0 ){
     const msg = {
