@@ -3,17 +3,17 @@
     <mj-section>
       <mj-column>
 
-        <mj-image width="150px" src="https://cas-info-biomedica.s3.amazonaws.com/logo_cas_small.png"></mj-image>
+        <mj-image width="150px" src="https://placehold.it/150x50.png"></mj-image>
 
         <mj-divider border-color="#099999"></mj-divider>
 
-        <mj-text font-size="20px" color="#777777" font-family="helvetica">Estimado <strong>{{name}} {{lastname}}</strong></mj-text>
-        <mj-text font-size="14px" color="#777777" font-family="helvetica">A continuación se adjunta una lista de sus pacientes</mj-text>
+        <mj-text font-size="20px" color="#777777" font-family="helvetica">Dear <strong>{{name}} {{lastname}}</strong></mj-text>
+        <mj-text font-size="14px" color="#777777" font-family="helvetica">This is your patient list:</mj-text>
         
         <mj-table color="#777777">
           <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0;">
             <th style="padding: 0 15px 0 0;">ID</th>
-            <th style="padding: 0 15px;">Nombre</th>
+            <th style="padding: 0 15px;">Name</th>
           </tr>
           {{#each patients}}
             <tr>
@@ -22,7 +22,7 @@
             </tr>
           {{else}}
             <tr>
-              <td style="padding: 0 15px 0 0;" colspan="2">SIN DATOS</td>
+              <td style="padding: 0 15px 0 0;" colspan="2">NO DATA</td>
             </tr>
           {{/each}}  
         </mj-table>
